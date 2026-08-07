@@ -1,88 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Memories</title>
-  <style>
-    :root {
-      --bg: #0d0f12;
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --accent: #e2b714;
-      --text: #ffffff;
-      --subtext: #a0a5b1;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f5f0;
+    color: #292929;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 18px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 28px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+}
+
+iframe {
+    width: 100%;
+    height: 390px;
+    border: 0;
+    border-radius: 14px;
+}
+
+.message {
+    margin-top: 22px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.heart {
+    font-size: 30px;
+}
+
+@media(max-width:600px) {
+    iframe {
+        height: 330px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 20px 15px;
-    }
-    .container {
-      width: 100%;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .header {
-      text-align: center;
-      padding: 30px 20px;
-      background: var(--card-bg);
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-    }
-    .header h1 { font-size: 1.8rem; margin-bottom: 8px; color: var(--accent); }
-    .header p { color: var(--subtext); font-size: 0.95rem; }
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 15px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-      max-height: 350px;
-    }
-    .card-caption {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: var(--subtext);
-      line-height: 1.4;
-    }
-    .audio-player {
-      width: 100%;
-      margin-top: 10px;
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Our Treasured Moments</h1>
-      <p>Scan to relive our favorite memories together ✨</p>
-    </div>
 
-    <!-- Memory Card 1 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=800&q=80" alt="Memory Photo">
-      <div class="card-caption">A unforgettable evening under the stars.</div>
-    </div>
+<div class="container">
 
-    <!-- Audio Memory Card -->
-    <div class="card">
-      <p style="margin-bottom: 8px; font-weight: 600;">Favorite Voice Note / Song</p>
-      <audio class="audio-player" controls>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-  </div>
+<div class="heart">❤️</div>
+
+<h1>Our Memories</h1>
+
+<div class="subtitle">
+A little memory, kept forever.
+</div>
+
+<div class="card">
+
+<iframe
+src="https://player.cloudinary.com/embed/?cloud_name=mnaaafty&public_id=VID_20260806_015423_278_bsl_xlzpkh"
+allow="autoplay; fullscreen; encrypted-media"
+allowfullscreen>
+</iframe>
+
+<div class="message">
+Some moments deserve to be remembered forever. ❤️
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
