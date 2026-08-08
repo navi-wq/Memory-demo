@@ -3,390 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Our Wedding Story</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:#0d0c0c;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: #0d0c0c;
-  color: #fff;
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-/* ---------- COVER ---------- */
-
-.hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
   background:
-    linear-gradient(
-      rgba(0,0,0,.28),
-      rgba(0,0,0,.78)
-    ),
-    url("1786199411526.png") center center / cover no-repeat;
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.78)),
+    url("1786199411526.png") center/cover no-repeat;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255,255,255,.08),
-    transparent 55%
-  );
-  pointer-events: none;
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:30px 22px;
+  max-width:600px;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 30px 22px;
-  max-width: 600px;
-
-  animation: appear 2s ease;
+.kicker{
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:5px;
+  opacity:.85;
+  text-transform:uppercase;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero h1{
+  font-size:44px;
+  font-weight:normal;
+  line-height:1.15;
+  margin:18px 0 12px;
+  text-shadow:0 4px 25px rgba(0,0,0,.7);
 }
 
-.kicker {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 5px;
-  opacity: .85;
-  text-transform: uppercase;
+.hero-sub{
+  font-size:17px;
+  line-height:1.6;
+  opacity:.9;
 }
 
-.hero h1 {
-  font-size: 44px;
-  font-weight: normal;
-  line-height: 1.15;
-  margin: 18px 0 12px;
-  text-shadow: 0 4px 25px rgba(0,0,0,.7);
+.enter-btn{
+  margin-top:38px;
+  padding:14px 27px;
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:50px;
+  background:rgba(0,0,0,.25);
+  color:#fff;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  cursor:pointer;
+  backdrop-filter:blur(5px);
 }
 
-.hero-sub {
-  font-size: 17px;
-  line-height: 1.6;
-  opacity: .9;
+.enter-btn:active{
+  transform:scale(.96);
 }
 
-.scroll {
-  margin-top: 70px;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 3px;
-  opacity: .8;
-  animation: float 2s infinite ease-in-out;
+.scroll{
+  margin-top:45px;
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:3px;
+  opacity:.7;
 }
 
-@keyframes float {
-  0%,100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(8px);
-  }
+.section{
+  max-width:650px;
+  margin:auto;
+  padding:75px 18px;
 }
 
-
-/* ---------- SECTIONS ---------- */
-
-.section {
-  max-width: 650px;
-  margin: auto;
-  padding: 75px 18px;
+.title{
+  text-align:center;
+  margin-bottom:35px;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 35px;
+.title span{
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  opacity:.55;
 }
 
-.title span {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 4px;
-  opacity: .55;
-  text-transform: uppercase;
+.title h2{
+  font-size:36px;
+  font-weight:normal;
+  margin:12px 0;
 }
 
-.title h2 {
-  font-size: 36px;
-  font-weight: normal;
-  margin: 12px 0;
+.title p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:.65;
 }
 
-.title p {
-  font-size: 15px;
-  line-height: 1.6;
-  opacity: .65;
+.photo{
+  width:100%;
+  display:block;
+  margin:22px 0;
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.55);
 }
 
-.photo {
-  width: 100%;
-  display: block;
-  margin: 22px 0;
-  border-radius: 16px;
-
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.55);
-
-  transition: transform .5s ease;
+video{
+  width:100%;
+  display:block;
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
 }
 
-.photo:hover {
-  transform: scale(1.015);
+.message{
+  min-height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
 }
 
-
-/* ---------- VIDEO ---------- */
-
-.video-box {
-  margin-top: 25px;
+.heart{
+  font-size:34px;
+  margin-bottom:15px;
 }
 
-video {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.6);
+.message h2{
+  font-size:34px;
+  font-weight:normal;
 }
 
-
-/* ---------- MESSAGE ---------- */
-
-.message {
-  min-height: 80vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  text-align: center;
+.message p{
+  font-size:17px;
+  line-height:1.9;
+  opacity:.75;
 }
 
-.heart {
-  font-size: 34px;
-  margin-bottom: 15px;
+#musicStatus{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:20;
+  display:none;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  font-size:18px;
 }
 
-.message h2 {
-  font-size: 34px;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.message p {
-  font-size: 17px;
-  line-height: 1.9;
-  opacity: .75;
-}
-
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 480px) {
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero-sub {
-    font-size: 16px;
-  }
-
-  .section {
-    padding: 60px 16px;
-  }
-
-  .title h2 {
-    font-size: 32px;
-  }
+@media(max-width:480px){
+  .hero h1{font-size:38px}
+  .section{padding:60px 16px}
 }
 </style>
 </head>
 
 <body>
 
-
-<!-- COVER -->
-
 <section class="hero">
-
   <div class="hero-content">
 
-    <div class="kicker">
-      A Story Worth Remembering
-    </div>
+    <div class="kicker">A Story Worth Remembering</div>
 
-    <h1>
-      Our Wedding Story
-    </h1>
+    <h1>Our Wedding Story</h1>
 
     <div class="hero-sub">
       Two hearts · One beautiful journey
     </div>
 
+    <button class="enter-btn" id="enterBtn">
+      TAP TO ENTER ❤️
+    </button>
+
     <div class="scroll">
-      SCROLL TO RELIVE ↓
+      THEN SCROLL TO RELIVE ↓
     </div>
 
   </div>
-
 </section>
 
-
-<!-- HALDI -->
 
 <section class="section">
 
   <div class="title">
-
     <span>01 · CEREMONY</span>
-
     <h2>Haldi</h2>
-
-    <p>
-      The beginning of the celebration.
-    </p>
-
+    <p>The beginning of the celebration.</p>
   </div>
 
-
-  <img
-    class="photo"
-    src="1786199394382.png"
-    alt="Haldi memory"
-  >
-
-  <img
-    class="photo"
-    src="1786199397759.png"
-    alt="Haldi memory"
-  >
-
-  <img
-    class="photo"
-    src="1786199402188.png"
-    alt="Haldi memory"
-  >
+  <img class="photo" src="1786199394382.png">
+  <img class="photo" src="1786199397759.png">
+  <img class="photo" src="1786199402188.png">
 
 </section>
 
 
-<!-- WEDDING -->
-
 <section class="section">
 
   <div class="title">
-
     <span>02 · CEREMONY</span>
-
     <h2>The Wedding</h2>
-
-    <p>
-      The day two stories became one.
-    </p>
-
+    <p>The day two stories became one.</p>
   </div>
 
-
-  <img
-    class="photo"
-    src="1786199411526.png"
-    alt="Wedding memory"
-  >
-
-  <img
-    class="photo"
-    src="1786199417735.png"
-    alt="Wedding memory"
-  >
-
-  <img
-    class="photo"
-    src="1786199421562.png"
-    alt="Wedding memory"
-  >
+  <img class="photo" src="1786199411526.png">
+  <img class="photo" src="1786199417735.png">
+  <img class="photo" src="1786199421562.png">
 
 </section>
 
-
-<!-- WEDDING VIDEO -->
 
 <section class="section">
 
   <div class="title">
-
     <span>03 · FILM</span>
-
     <h2>Our Wedding Film</h2>
-
-    <p>
-      A moment we can watch again and again.
-    </p>
-
+    <p>A moment we can watch again and again.</p>
   </div>
 
-
-  <div class="video-box">
-
-    <video
-      controls
-      playsinline
-      preload="metadata">
-
-      <source
-        src="gemini_generated_video_f6c05d29.mp4"
-        type="video/mp4">
-
-    </video>
-
-  </div>
+  <video controls playsinline preload="metadata">
+    <source src="gemini_generated_video_f6c05d29.mp4" type="video/mp4">
+  </video>
 
 </section>
 
-
-<!-- FINAL MESSAGE -->
 
 <section class="section message">
 
-  <div class="heart">
-    ❤️
-  </div>
+  <div class="heart">❤️</div>
 
-  <h2>
-    Forever Begins Here
-  </h2>
+  <h2>Forever Begins Here</h2>
 
   <p>
     Some moments become memories.<br>
@@ -399,6 +262,99 @@ video {
 
 </section>
 
+
+<button id="musicStatus">♫</button>
+
+
+<script>
+
+let audioContext;
+let masterGain;
+let musicTimer;
+let step = 0;
+
+const notes = [
+  261.63, 329.63, 392.00, 329.63,
+  293.66, 349.23, 440.00, 349.23,
+  261.63, 329.63, 392.00, 493.88,
+  440.00, 392.00, 329.63, 293.66
+];
+
+function playNote(frequency){
+
+  if(!audioContext) return;
+
+  const osc = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+
+  osc.type = "sine";
+  osc.frequency.value = frequency;
+
+  gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.055,
+    audioContext.currentTime + 0.08
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.0001,
+    audioContext.currentTime + 1.15
+  );
+
+  osc.connect(gain);
+  gain.connect(masterGain);
+
+  osc.start();
+  osc.stop(audioContext.currentTime + 1.2);
+}
+
+function startMusic(){
+
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+  masterGain = audioContext.createGain();
+  masterGain.gain.value = 0.55;
+  masterGain.connect(audioContext.destination);
+
+  function loop(){
+
+    playNote(notes[step % notes.length]);
+
+    step++;
+
+    musicTimer = setTimeout(loop, 650);
+  }
+
+  loop();
+}
+
+document.getElementById("enterBtn").addEventListener("click", function(){
+
+  startMusic();
+
+  this.style.display = "none";
+
+  document.getElementById("musicStatus").style.display = "block";
+
+});
+
+
+document.getElementById("musicStatus").addEventListener("click", function(){
+
+  if(!audioContext) return;
+
+  if(audioContext.state === "running"){
+    audioContext.suspend();
+    this.textContent = "🔇";
+  }else{
+    audioContext.resume();
+    this.textContent = "♫";
+  }
+
+});
+
+</script>
 
 </body>
 </html>
