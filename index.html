@@ -1,63 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Memories ❤️</title>
+
+<title>Our Forever Memory ❤️</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f8f5f0;
-    color: #292929;
-    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(145deg, #f8eee7, #fffaf7, #eee0d5);
+    color: #3b2a24;
 }
 
 .container {
-    max-width: 700px;
+    max-width: 620px;
     margin: auto;
-    padding: 40px 18px;
+    padding: 38px 18px 45px;
+    text-align: center;
+}
+
+.top-heart {
+    font-size: 38px;
+    margin-bottom: 8px;
+    animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
 }
 
 h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin: 8px 0;
 }
 
 .subtitle {
-    color: #777;
+    font-family: Arial, sans-serif;
+    color: #8a7770;
+    font-size: 14px;
     margin-bottom: 28px;
 }
 
 .card {
-    background: white;
-    padding: 18px;
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 28px;
+    padding: 14px;
+    box-shadow: 0 18px 45px rgba(74, 47, 35, 0.14);
+}
+
+.video-wrapper {
+    overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    background: #000;
 }
 
 iframe {
+    display: block;
     width: 100%;
-    height: 390px;
+    height: 360px;
     border: 0;
-    border-radius: 14px;
 }
 
 .message {
-    margin-top: 22px;
-    font-size: 18px;
+    padding: 24px 12px 8px;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.quote {
+    margin: 14px 8px 8px;
+    padding: 18px;
+    border-radius: 18px;
+    background: #faf1eb;
+    color: #765d51;
+    font-size: 15px;
     line-height: 1.6;
+    font-style: italic;
 }
 
-.heart {
-    font-size: 30px;
+.small-heart {
+    margin-top: 18px;
+    font-size: 20px;
 }
 
-@media(max-width:600px) {
+.footer {
+    margin-top: 28px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #9b8981;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 15px 40px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
     iframe {
         height: 330px;
+    }
+
+    .message {
+        font-size: 17px;
     }
 }
 </style>
@@ -67,27 +125,45 @@ iframe {
 
 <div class="container">
 
-<div class="heart">❤️</div>
+    <div class="top-heart">❤️</div>
 
-<h1>Our Memories</h1>
+    <h1>Our Forever Memory</h1>
 
-<div class="subtitle">
-A little memory, kept forever.
-</div>
+    <div class="subtitle">
+        A special moment, preserved forever.
+    </div>
 
-<div class="card">
+    <div class="card">
 
-<iframe
-src="https://player.cloudinary.com/embed/?cloud_name=mnaaafty&public_id=VID_20260806_015423_278_bsl_xlzpkh"
-allow="autoplay; fullscreen; encrypted-media"
-allowfullscreen>
-</iframe>
+        <div class="video-wrapper">
 
-<div class="message">
-Some moments deserve to be remembered forever. ❤️
-</div>
+            <iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=mnaaafty&public_id=VID_20260806_015423_278_bsl_xlzpkh"
+                allow="autoplay; fullscreen; encrypted-media"
+                allowfullscreen>
+            </iframe>
 
-</div>
+        </div>
+
+        <div class="message">
+            Some memories are not just moments...
+            <br>
+            They are feelings that stay forever. ❤️
+        </div>
+
+        <div class="quote">
+            “Every time you tap this, relive a beautiful memory.”
+        </div>
+
+        <div class="small-heart">
+            ✨ ❤️ ✨
+        </div>
+
+    </div>
+
+    <div class="footer">
+        A memory made to last forever
+    </div>
 
 </div>
 
