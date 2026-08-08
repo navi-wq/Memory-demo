@@ -3,140 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Memory ❤️</title>
+
+<title>Our Wedding Story</title>
 
 <style>
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  background: #000;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.container {
-  width: 100%;
-  max-width: 600px;
+body {
+  margin: 0;
+  background: #111;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.section {
+  padding: 55px 18px;
+  max-width: 650px;
   margin: auto;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(#111, #1b1715);
+}
+
+.small {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  opacity: .65;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: normal;
+  margin: 18px 0 10px;
+}
+
+.hero p {
+  font-size: 17px;
+  opacity: .75;
+}
+
+.scroll {
+  margin-top: 70px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: .6;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title span {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  opacity: .6;
+}
+
+.title h2 {
+  font-size: 34px;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.title p {
+  font-size: 15px;
+  opacity: .65;
+}
+
+.photo {
+  width: 100%;
+  display: block;
+  margin: 18px 0;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.45);
 }
 
 video {
   width: 100%;
-  height: auto;
   display: block;
-}
-
-#slideshow {
-  display: none;
-  width: 100%;
-  height: 100vh;
-  max-height: 700px;
-  object-fit: contain;
-  background: #000;
+  border-radius: 14px;
+  margin-top: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.5);
 }
 
 .message {
-  display: none;
-  padding: 35px 25px;
-  font-size: 20px;
-  line-height: 1.7;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.message h1 {
-  font-size: 30px;
-  margin-bottom: 20px;
+.message h2 {
+  font-size: 32px;
+  font-weight: normal;
 }
 
-.fade {
-  animation: fade 1.2s ease-in-out;
+.message p {
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: .8;
 }
 
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.heart {
+  font-size: 35px;
+  margin-bottom: 15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- COVER -->
+<section class="hero">
+  <div class="small">A Story Worth Remembering</div>
 
-  <!-- GEMINI VIDEO -->
-  <video id="introVideo" autoplay muted playsinline>
-    <source src="gemini_generated_video_b0c536be.mp4" type="video/mp4">
-  </video>
+  <h1>Our Wedding Story</h1>
 
-  <!-- PHOTO SLIDESHOW -->
-  <img id="slideshow" src="" alt="Our Memories">
+  <p>Beautiful moments, forever memories.</p>
 
-  <!-- MESSAGE -->
-  <div id="message" class="message">
-    <h1>❤️ Our Memories ❤️</h1>
-    <p>
-      कुछ यादें सिर्फ तस्वीरों में नहीं होतीं...<br>
-      वो हमारे दिल में हमेशा रहती हैं। ❤️
-    </p>
+  <div class="scroll">SCROLL TO RELIVE ↓</div>
+</section>
+
+
+<!-- HALDI -->
+<section class="section">
+
+  <div class="title">
+    <span>01 · CEREMONY</span>
+    <h2>Haldi</h2>
+    <p>The beginning of the celebration.</p>
   </div>
 
-</div>
+  <img class="photo"
+  src="1786199394382.png"
+  alt="Haldi memory">
 
-<script>
+  <img class="photo"
+  src="1786199397759.png"
+  alt="Haldi memory">
 
-const photos = [
-  "file_000000001b6882079a850c5579532b4c.png",
-  "file_0000000024ec8211bda90c4187d9e1a3.png",
-  "file_0000000072108211982ce28a39d7449f.png",
-  "file_00000000e6ec82118f62455f33b89614.png"
-];
+  <img class="photo"
+  src="1786199402188.png"
+  alt="Haldi memory">
 
-let currentPhoto = 0;
+</section>
 
-const video = document.getElementById("introVideo");
-const slideshow = document.getElementById("slideshow");
-const message = document.getElementById("message");
 
-function startSlideshow() {
+<!-- WEDDING -->
+<section class="section">
 
-  video.style.display = "none";
+  <div class="title">
+    <span>02 · CEREMONY</span>
+    <h2>The Wedding</h2>
+    <p>The day two stories became one.</p>
+  </div>
 
-  slideshow.style.display = "block";
-  slideshow.src = photos[0];
-  slideshow.classList.add("fade");
+  <img class="photo"
+  src="1786199411526.png"
+  alt="Wedding memory">
 
-  currentPhoto = 0;
+  <img class="photo"
+  src="1786199417735.png"
+  alt="Wedding memory">
 
-  const photoTimer = setInterval(() => {
+  <img class="photo"
+  src="1786199421562.png"
+  alt="Wedding memory">
 
-    currentPhoto++;
+</section>
 
-    if (currentPhoto >= photos.length) {
-      clearInterval(photoTimer);
 
-      slideshow.style.display = "none";
-      message.style.display = "block";
+<!-- VIDEO -->
+<section class="section">
 
-      return;
-    }
+  <div class="title">
+    <span>03 · FILM</span>
+    <h2>Our Wedding Film</h2>
+    <p>A moment we can watch again and again.</p>
+  </div>
 
-    slideshow.classList.remove("fade");
+  <video controls playsinline preload="metadata">
+    <source
+      src="gemini_generated_video_f6c05d29.mp4"
+      type="video/mp4">
+  </video>
 
-    void slideshow.offsetWidth;
+</section>
 
-    slideshow.classList.add("fade");
 
-    slideshow.src = photos[currentPhoto];
+<!-- MESSAGE -->
+<section class="section message">
 
-  }, 3000);
-}
+  <div class="heart">❤️</div>
 
-video.addEventListener("ended", startSlideshow);
+  <h2>Forever Begins Here</h2>
 
-</script>
+  <p>
+    Some moments become memories.<br>
+    Some memories become forever.
+  </p>
+
+  <p>
+    Thank you for being part of our story.
+  </p>
+
+</section>
 
 </body>
 </html>
