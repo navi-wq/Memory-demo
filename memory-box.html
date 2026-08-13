@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:#f4eee5;
+  color:#332820;
+  font-family:Georgia,"Times New Roman",serif;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 18px;
+  background:
+    radial-gradient(circle at top,#fff8ef,#e7d6c0);
+}
+
+.box-wrap{
+  width:100%;
+  max-width:430px;
+  text-align:center;
+}
+
+.box{
+  background:#8a5a3b;
+  border-radius:12px;
+  padding:22px;
+  box-shadow:
+    0 30px 60px rgba(70,40,20,.30),
+    inset 0 0 0 2px rgba(255,255,255,.12);
+}
+
+.lid{
+  background:#71462d;
+  border-radius:9px;
+  padding:35px 20px;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.small{
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  color:#f8e8d4;
+  text-transform:uppercase;
+}
+
+.lid h1{
+  color:#fff8ed;
+  font-size:38px;
+  font-weight:normal;
+  line-height:1.15;
+  margin:18px 0 12px;
+}
+
+.lid p{
+  color:#f1ddc5;
+  line-height:1.6;
+}
+
+.open-btn{
+  margin-top:25px;
+  padding:14px 25px;
+  border:0;
+  border-radius:50px;
+  background:#fff5e8;
+  color:#68442e;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  cursor:pointer;
+}
+
+.open-btn:active{
+  transform:scale(.96);
+}
+
+.section{
+  max-width:650px;
+  margin:auto;
+  padding:70px 18px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.title span{
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  opacity:.55;
+}
+
+.title h2{
+  font-size:34px;
+  font-weight:normal;
+  margin:12px 0;
+}
+
+.title p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:.65;
+}
+
+.tap-card{
+  max-width:360px;
+  margin:0 auto 55px;
+  padding:30px 20px;
+  text-align:center;
+  background:#fffaf3;
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(70,40,20,.15);
+  border:1px solid #eadac8;
+}
+
+.tap-icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.tap-card h3{
+  margin:8px 0;
+  font-size:25px;
+  font-weight:normal;
+}
+
+.tap-card p{
+  margin:8px 0 0;
+  font-size:14px;
+  opacity:.65;
+}
+
+.photo{
+  width:100%;
+  display:block;
+  margin:22px 0;
+  border-radius:16px;
+  box-shadow:0 15px 40px rgba(50,30,15,.18);
+}
+
+.memory{
+  margin:55px 0;
+}
+
+.memory-number{
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  opacity:.45;
+}
+
+.memory h3{
+  font-size:27px;
+  font-weight:normal;
+  margin:10px 0;
+}
+
+.memory p{
+  line-height:1.7;
+  opacity:.7;
+}
+
+video{
+  width:100%;
+  display:block;
+  border-radius:16px;
+  box-shadow:0 18px 45px rgba(40,25,15,.25);
+}
+
+.message{
+  min-height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+}
+
+.heart{
+  font-size:35px;
+}
+
+.message h2{
+  font-size:34px;
+  font-weight:normal;
+}
+
+.message p{
+  line-height:1.8;
+  opacity:.65;
+}
+
+.hidden{
+  display:none;
+}
+
+@media(max-width:480px){
+  .lid h1{font-size:34px}
+  .section{padding:55px 16px}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <div class="box-wrap">
+
+    <div class="box">
+
+      <div class="lid">
+
+        <div class="small">A Gift Full Of Memories</div>
+
+        <h1>Our Memories ❤️</h1>
+
+        <p>
+          A little box full of moments<br>
+          worth remembering forever.
+        </p>
+
+        <button class="open-btn" id="openBtn">
+          OPEN THE BOX
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div id="memoryContent" class="hidden">
+
+<section class="section">
+
+  <div class="tap-card">
+
+    <div class="tap-icon">📱❤️</div>
+
+    <h3>Tap to Relive</h3>
+
+    <p>
+      Tap your phone here to open
+      our complete digital memories.
+    </p>
+
+  </div>
+
+
+  <div class="title">
+
+    <span>OUR STORY</span>
+
+    <h2>Six Little Memories</h2>
+
+    <p>
+      Every picture has a story.
+      Every story has a feeling.
+    </p>
+
+  </div>
+
+
+  <div class="memory">
+
+    <div class="memory-number">MEMORY 01</div>
+
+    <h3>The Beginning</h3>
+
+    <p>
+      The moment our beautiful story began.
+    </p>
+
+    <img class="photo" src="1786199394382.png">
+
+  </div>
+
+
+  <div class="memory">
+
+    <div class="memory-number">MEMORY 02</div>
+
+    <h3>Our Favourite Day</h3>
+
+    <p>
+      One of those days we wish we could live again.
+    </p>
+
+    <img class="photo" src="1786199397759.png">
+
+  </div>
+
+
+  <div class="memory">
+
+    <div class="memory-number">MEMORY 03</div>
+
+    <h3>That Special Moment</h3>
+
+    <p>
+      A little moment that means a lot.
+    </p>
+
+    <img class="photo" src="1786199402188.png">
+
+  </div>
+
+
+  <div class="memory">
+
+    <div class="memory-number">MEMORY 04</div>
+
+    <h3>Together</h3>
+
+    <p>
+      Some memories are better when shared.
+    </p>
+
+    <img class="photo" src="1786199411526.png">
+
+  </div>
+
+
+  <div class="memory">
+
+    <div class="memory-number">MEMORY 05</div>
+
+    <h3>Forever</h3>
+
+    <p>
+      A moment we will always keep close.
+    </p>
+
+    <img class="photo" src="1786199417735.png">
+
+  </div>
+
+
+  <div class="memory">
+
+    <div class="memory-number">MEMORY 06</div>
+
+    <h3>Our Story Continues</h3>
+
+    <p>
+      And this is only another beautiful chapter.
+    </p>
+
+    <img class="photo" src="1786199421562.png">
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="title">
+
+    <span>ONE MORE MEMORY</span>
+
+    <h2>Our Memory Film</h2>
+
+    <p>
+      Press play and relive the moment.
+    </p>
+
+  </div>
+
+  <video controls playsinline preload="metadata">
+
+    <source
+      src="gemini_generated_video_f6c05d29.mp4"
+      type="video/mp4">
+
+  </video>
+
+</section>
+
+
+<section class="section message">
+
+  <div class="heart">❤️</div>
+
+  <h2>Some Memories Stay Forever</h2>
+
+  <p>
+    Photos fade into the past.<br>
+    Memories stay in the heart.
+  </p>
+
+  <p>
+    Thank you for being part of our story.
+  </p>
+
+</section>
+
+</div>
+
+
+<script>
+
+document.getElementById("openBtn").addEventListener("click",function(){
+
+  document.getElementById("memoryContent").classList.remove("hidden");
+
+  document.getElementById("memoryContent").scrollIntoView({
+    behavior:"smooth"
+  });
+
+});
+
+</script>
+
+</body>
+</html>
