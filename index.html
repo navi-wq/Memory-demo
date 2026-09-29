@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Love Story ❤️</title>
+<title>Rahul & Priya ❤️</title>
 
 <style>
 * {
@@ -14,143 +14,87 @@
 }
 
 body {
+  background: #000;
+  color: white;
   font-family: Georgia, "Times New Roman", serif;
-  background: #faf7f4;
-  color: #2b2522;
-  text-align: center;
 }
 
+/* Opening video */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 20px;
-  background: radial-gradient(
-    circle at top,
-    #fffdfb 0%,
-    #f7eee9 55%,
-    #eee0d9 100%
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+/* Dark overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.20),
+    rgba(0,0,0,0.65)
   );
 }
 
-.hero-content {
-  width: 100%;
-  max-width: 430px;
+/* Names */
+.names {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  right: 20px;
+  bottom: 80px;
+  text-align: center;
 }
 
-.small {
+.names .small {
   font-family: Arial, sans-serif;
   font-size: 12px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: #8c7770;
-  margin-bottom: 18px;
-}
-
-h1 {
-  font-size: 38px;
-  line-height: 1.15;
-  font-weight: 500;
   margin-bottom: 14px;
+  opacity: 0.9;
 }
 
-.subtitle {
+.names h1 {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.5);
+}
+
+.names p {
+  margin-top: 12px;
   font-family: Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #756965;
-  margin-bottom: 28px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
-.memory-photo {
+/* Scroll indication */
+.scroll {
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 18px;
-  display: block;
-  background: #e9ddd7;
-  box-shadow: 0 18px 45px rgba(60, 35, 25, 0.18);
-  margin-bottom: 25px;
-}
-
-.tap-button {
-  display: inline-block;
-  background: #2b2522;
-  color: white;
-  padding: 16px 28px;
-  border-radius: 50px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.scroll-hint {
-  margin-top: 25px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  color: #9a8880;
-}
-
-.section {
-  padding: 65px 20px;
-  max-width: 700px;
-  margin: auto;
-}
-
-.section-title {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-.section-text {
-  font-family: Arial, sans-serif;
-  color: #756965;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.video-box {
-  margin-top: 30px;
-  width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #171312;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-}
-
-.video-placeholder {
-  height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #cfc3bd;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-
-.memory-card {
-  margin-top: 35px;
-  padding: 30px 22px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 12px 35px rgba(50,30,20,0.08);
-}
-
-.quote {
-  font-size: 20px;
-  line-height: 1.6;
-  font-style: italic;
-}
-
-.footer {
-  padding: 40px 20px 60px;
+  text-align: center;
   font-family: Arial, sans-serif;
   font-size: 11px;
-  color: #a08f88;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  opacity: 0.8;
 }
 </style>
 </head>
@@ -159,49 +103,29 @@ h1 {
 
 <section class="hero">
 
-  <div class="hero-content">
-
-    <div class="small">
-      A Memory Made Just For You
-    </div>
-
-    <h1>
-      Our Love Story,<br>
-      Preserved Forever ❤️
-    </h1>
-
-    <p class="subtitle">
-      One beautiful moment.<br>
-      One unforgettable memory.
-    </p>
-
-    <img
-      class="memory-photo"
-      src="./couple.jpg"
-      alt="Our Memory"
-    ><div class="video-box">
   <video
-    controls
+    autoplay
+    muted
     playsinline
-    preload="metadata"
-    style="width:100%; display:block; border-radius:18px;"
+    loop
+    preload="auto"
   >
     <source src="./couple-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
-    </div>
 
-    <a href="#memory" class="tap-button">
-      Tap to relive this memory ❤️
-    </a>
+  <div class="names">
+    <div class="small">A Beautiful Beginning</div>
 
-    <div class="scroll-hint">
-      ↓ Scroll to discover the memory
-    </div>
+    <h1>Rahul &amp; Priya</h1>
 
+    <p>Our Story • Our Memories • Forever</p>
+  </div>
+
+  <div class="scroll">
+    ↓ SCROLL TO DISCOVER
   </div>
 
 </section>
 
-
-
+</body>
+</html>
