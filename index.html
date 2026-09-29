@@ -129,9 +129,13 @@ body {
 <audio id="bgMusic" loop>
   <source src="Dil Diyan Gallan Song.mp3" type="audio/mpeg">
 </audio>
-  <script>
-document.addEventListener("click", function () {
-  document.getElementById("bgMusic").play();
+
+<script>
+const video = document.querySelector(".hero video");
+const music = document.getElementById("bgMusic");
+
+video.addEventListener("click", function () {
+  music.play();
 }, { once: true });
 </script>
 </body>
