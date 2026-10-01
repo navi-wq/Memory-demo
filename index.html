@@ -128,7 +128,6 @@ body {
     autoplay
     muted
     playsinline
-    loop
     preload="auto"
   >
     <source src="./couple-video.mp4" type="video/mp4">
@@ -229,8 +228,9 @@ startScreen.addEventListener("click", function () {
   startScreen.style.display = "none";
 });
 
-music.addEventListener("ended", function () {
-  video.pause();
+video.addEventListener("ended", function () {
+  music.pause();
+  music.currentTime = 0;
 });
 </script>
 </body>
