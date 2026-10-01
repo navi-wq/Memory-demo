@@ -30,11 +30,32 @@ body {
 
 .hero video {
   position: absolute;
-  width: 100%;
+  width: 82%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   top: 0;
-  left: 0;
+  left: 9%;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background-image: url("./couple-video.mp4");
+  background-size: cover;
+  background-position: center;
+  filter: blur(25px);
+  transform: scale(1.1);
+  z-index: 0;
 }
 
 /* Dark overlay */
@@ -130,25 +151,67 @@ body {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #000;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+    url('./couple.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 ">
-  <div>
-    <div style="
-      font-family: Georgia, serif;
-      font-size: 28px;
-      margin-bottom: 12px;
-    ">Rahul &amp; Priya ❤️</div>
+
+  <div style="
+    padding: 35px 25px;
+    width: 90%;
+    max-width: 400px;
+  ">
 
     <div style="
       font-family: Arial, sans-serif;
-      font-size: 13px;
-      letter-spacing: 3px;
-      opacity: 0.8;
-    ">TAP TO ENTER</div>
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    ">
+      A Beautiful Beginning
+    </div>
+
+    <div style="
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: 400;
+      text-shadow: 0 3px 15px rgba(0,0,0,0.7);
+    ">
+      Rahul &amp; Priya ❤️
+    </div>
+
+    <div style="
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-top: 14px;
+      opacity: 0.9;
+    ">
+      Our Story • Our Memories • Forever
+    </div>
+
+    <div style="
+      margin-top: 45px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      padding: 14px 28px;
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 30px;
+      display: inline-block;
+      background: rgba(0,0,0,0.25);
+    ">
+      TAP TO ENTER
+    </div>
+
   </div>
 </div>
 
@@ -167,5 +230,6 @@ startScreen.addEventListener("click", function () {
   startScreen.style.display = "none";
 });
 </script>
+
 </body>
 </html>
