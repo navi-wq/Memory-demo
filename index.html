@@ -126,17 +126,46 @@ body {
   </div>
 
 </section>
+<div id="startScreen" style="
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+">
+  <div>
+    <div style="
+      font-family: Georgia, serif;
+      font-size: 28px;
+      margin-bottom: 12px;
+    ">Rahul &amp; Priya ❤️</div>
+
+    <div style="
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      opacity: 0.8;
+    ">TAP TO ENTER</div>
+  </div>
+</div>
+
 <audio id="bgMusic" loop>
   <source src="Dil Diyan Gallan Song.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-const video = document.querySelector(".hero video");
+const startScreen = document.getElementById("startScreen");
 const music = document.getElementById("bgMusic");
+const video = document.querySelector(".hero video");
 
-video.addEventListener("click", function () {
+startScreen.addEventListener("click", function () {
   music.play();
-}, { once: true });
+  video.play();
+  startScreen.style.display = "none";
+});
 </script>
 </body>
 </html>
