@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Rahul & Priya ❤️</title>
-.haldi-section {
-  padding: 70px 18px 80px;
-  background: linear-gradient(180deg, #fff8df 0%, #fffdf5 100%);
-  color: #5b4216;
-  text-align: center;
-}
-
-.haldi-heading .haldi-kicker {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  opacity: 0.75;
-}
-
 
 <style>
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,7 +21,10 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* Opening video */
+/* =========================
+   OPENING VIDEO
+========================= */
+
 .hero {
   position: relative;
   width: 100%;
@@ -54,27 +43,8 @@ body {
   z-index: 2;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: #000;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -20px;
-  background-image: url("./couple-video.mp4");
-  background-size: cover;
-  background-position: center;
-  filter: blur(25px);
-  transform: scale(1.1);
-  z-index: 0;
-}
-
 /* Dark overlay */
+
 .hero::after {
   content: "";
   position: absolute;
@@ -85,12 +55,14 @@ body {
     rgba(0,0,0,0.20),
     rgba(0,0,0,0.65)
   );
+  z-index: 1;
 }
 
 /* Names */
+
 .names {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   left: 20px;
   right: 20px;
   bottom: 80px;
@@ -122,6 +94,7 @@ body {
 }
 
 /* Scroll indication */
+
 .scroll {
   position: absolute;
   z-index: 3;
@@ -132,9 +105,20 @@ body {
   font-size: 11px;
   letter-spacing: 2px;
   opacity: 0.8;
-}.haldi-section {
+}
+
+
+/* =========================
+   HALDI SECTION
+========================= */
+
+.haldi-section {
   padding: 70px 18px 80px;
-  background: linear-gradient(180deg, #fff8df 0%, #fffdf5 100%);
+  background: linear-gradient(
+    180deg,
+    #fff8df 0%,
+    #fffdf5 100%
+  );
   color: #5b4216;
   text-align: center;
 }
@@ -179,10 +163,18 @@ body {
   display: block;
   border-radius: 12px;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     OPENING VIDEO
+========================= -->
 
 <section class="hero">
 
@@ -197,26 +189,50 @@ body {
   </video>
 
   <div class="names">
-    <div class="small">A Beautiful Beginning</div>
 
-    <h1>Rahul &amp; Priya</h1>
+    <div class="small">
+      A Beautiful Beginning
+    </div>
 
-    <p>Our Story • Our Memories • Forever</p>
+    <h1>
+      Rahul &amp; Priya
+    </h1>
+
+    <p>
+      Our Story • Our Memories • Forever
+    </p>
+
   </div>
 
   <div class="scroll">
     ↓ SCROLL TO DISCOVER
   </div>
 
-</section><section class="haldi-section">
+</section>
+
+
+<!-- =========================
+     HALDI
+========================= -->
+
+<section class="haldi-section">
 
   <div class="haldi-heading">
-    <div class="haldi-kicker">A Little Sunshine</div>
 
-    <h2>HALDI</h2>
+    <div class="haldi-kicker">
+      A Little Sunshine
+    </div>
 
-    <p>Where the celebrations began</p>
+    <h2>
+      HALDI
+    </h2>
+
+    <p>
+      Where the celebrations began
+    </p>
+
   </div>
+
 
   <div class="haldi-grid">
 
@@ -231,12 +247,21 @@ body {
   </div>
 
 </section>
+
+
+<!-- =========================
+     TAP TO ENTER SCREEN
+========================= -->
+
 <div id="startScreen" style="
   position: fixed;
   inset: 0;
   z-index: 9999;
   background-image:
-    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+    linear-gradient(
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.45)
+    ),
     url('./couple.jpg');
   background-size: cover;
   background-position: center;
@@ -263,6 +288,7 @@ body {
       A Beautiful Beginning
     </div>
 
+
     <div style="
       font-family: Georgia, serif;
       font-size: 42px;
@@ -271,6 +297,7 @@ body {
     ">
       Rahul &amp; Priya ❤️
     </div>
+
 
     <div style="
       font-family: Arial, sans-serif;
@@ -281,6 +308,7 @@ body {
     ">
       Our Story • Our Memories • Forever
     </div>
+
 
     <div style="
       margin-top: 45px;
@@ -297,26 +325,50 @@ body {
     </div>
 
   </div>
+
 </div>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
 
 <audio id="bgMusic">
   <source src="Dil Diyan Gallan Song.mp3" type="audio/mpeg">
 </audio>
+
+
 <script>
-const startScreen = document.getElementById("startScreen");
-const music = document.getElementById("bgMusic");
-const video = document.querySelector(".hero video");
+
+const startScreen =
+  document.getElementById("startScreen");
+
+const music =
+  document.getElementById("bgMusic");
+
+const video =
+  document.querySelector(".hero video");
+
 
 startScreen.addEventListener("click", function () {
+
+  startScreen.style.display = "none";
+
   music.play();
   video.play();
-  startScreen.style.display = "none";
+
 });
 
+
 music.addEventListener("ended", function () {
+
   video.pause();
   video.currentTime = 0;
+
 });
+
 </script>
+
+
 </body>
 </html>
