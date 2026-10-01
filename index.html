@@ -128,7 +128,6 @@ body {
     autoplay
     muted
     playsinline
-    loop
     preload="auto"
   >
     <source src="./couple-video.mp4" type="video/mp4">
@@ -218,7 +217,6 @@ body {
 <audio id="bgMusic">
   <source src="Dil Diyan Gallan Song.mp3" type="audio/mpeg">
 </audio>
-
 <script>
 const startScreen = document.getElementById("startScreen");
 const music = document.getElementById("bgMusic");
@@ -229,7 +227,10 @@ startScreen.addEventListener("click", function () {
   video.play();
   startScreen.style.display = "none";
 });
-</script>
 
+music.addEventListener("ended", function () {
+  video.pause();
+});
+</script>
 </body>
 </html>
