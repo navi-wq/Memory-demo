@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,10 +10,18 @@
 
 <style>
 
+/* =========================
+   BASIC
+========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -132,7 +141,6 @@ body {
   font-size: 38px;
   font-weight: 400;
   letter-spacing: 3px;
-  margin: 0;
 }
 
 .haldi-heading p {
@@ -293,7 +301,7 @@ body {
 
 
 /* =========================
-   ENVELOPE
+   ENVELOPE AREA
 ========================= */
 
 .envelope-area {
@@ -304,39 +312,37 @@ body {
   perspective: 1000px;
 }
 
-.envelope {
-  position: absolute;
-  left: 0;
-  bottom: 25px;
-  width: 300px;
+
 /* =========================
-   ENVELOPE
+   ENVELOPE BODY
 ========================= */
-
-.envelope-area {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 65px auto 45px;
-  perspective: 1000px;
-}
 
 .envelope {
   position: absolute;
   left: 0;
   bottom: 25px;
+
   width: 300px;
   height: 190px;
+
   background: #f1dfc7;
+
   border-radius: 8px;
-  box-shadow: 0 15px 35px rgba(80,50,30,0.25);
+
+  box-shadow:
+    0 15px 35px rgba(80,50,30,0.25);
+
+  overflow: visible;
 }
 
 
-/* CARD */
+/* =========================
+   LETTER / CARD
+========================= */
 
 .letter {
   position: absolute;
+
   left: 25px;
   bottom: -35px;
 
@@ -344,19 +350,25 @@ body {
   height: 125px;
 
   background: #fffaf1;
+
   border-radius: 5px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
 
-  box-shadow: 0 5px 15px rgba(60,40,20,0.15);
+  box-shadow:
+    0 5px 15px rgba(60,40,20,0.15);
 
   z-index: 2;
 
-  transform: translateY(0);
-  animation: letterMove 4s ease-in-out infinite;
+  animation:
+    letterMove
+    4s
+    ease-in-out
+    infinite;
 }
 
 .letter-text {
@@ -367,10 +379,13 @@ body {
 }
 
 
-/* ENVELOPE FRONT */
+/* =========================
+   ENVELOPE FRONT
+========================= */
 
 .envelope-front {
   position: absolute;
+
   left: 0;
   bottom: 0;
 
@@ -391,10 +406,13 @@ body {
 }
 
 
-/* ENVELOPE FLAP */
+/* =========================
+   TOP FLAP
+========================= */
 
 .flap {
   position: absolute;
+
   top: 0;
   left: 0;
 
@@ -409,13 +427,19 @@ body {
 
   z-index: 5;
 
-  animation: flapMove 4s ease-in-out infinite;
+  animation:
+    flapMove
+    4s
+    ease-in-out
+    infinite;
 
   backface-visibility: hidden;
 }
 
 
-/* SEAL */
+/* =========================
+   SEAL
+========================= */
 
 .seal {
   position: absolute;
@@ -439,17 +463,21 @@ body {
 
   z-index: 6;
 
-  animation: sealMove 4s ease-in-out infinite;
+  animation:
+    sealMove
+    4s
+    ease-in-out
+    infinite;
 }
 
 
 /* =========================
-   ENVELOPE ANIMATION
+   CARD ANIMATION
 ========================= */
 
 @keyframes letterMove {
 
-  /* CARD INSIDE */
+  /* CARD COMPLETELY INSIDE */
   0%, 20% {
     transform: translateY(35px);
   }
@@ -467,6 +495,10 @@ body {
 }
 
 
+/* =========================
+   FLAP ANIMATION
+========================= */
+
 @keyframes flapMove {
 
   /* CLOSED */
@@ -479,7 +511,7 @@ body {
     transform: rotateX(180deg);
   }
 
-  /* CLOSED AGAIN */
+  /* CLOSED */
   100% {
     transform: rotateX(0deg);
   }
@@ -487,54 +519,9 @@ body {
 }
 
 
-@keyframes sealMove {
-
-  0%, 25% {
-    opacity: 1;
-  }
-
-  45%, 75% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-
-}
-@keyframes letterMove {
-
-  0%, 20% {
-    transform: translateY(20px);
-  }
-
-  45%, 75% {
-    transform: translateY(-110px);
-  }
-
-  100% {
-    transform: translateY(20px);
-  }
-
-}
-
-
-@keyframes flapMove {
-
-  0%, 20% {
-    transform: rotateX(0deg);
-  }
-
-  45%, 75% {
-    transform: rotateX(180deg);
-  }
-
-  100% {
-    transform: rotateX(0deg);
-  }
-
-}
-
+/* =========================
+   SEAL ANIMATION
+========================= */
 
 @keyframes sealMove {
 
@@ -590,9 +577,10 @@ body {
 
 #startScreen {
   position: fixed;
+
   inset: 0;
 
-  z-index: 9999;
+  z-index: 99999;
 
   background-image:
     linear-gradient(
@@ -610,6 +598,11 @@ body {
 
   text-align: center;
 }
+
+
+/* =========================
+   MUSIC
+========================= */
 
 </style>
 
@@ -843,25 +836,41 @@ body {
 
     <div class="envelope">
 
+
+      <!-- LETTER -->
+
       <div class="letter">
 
         <div class="letter-text">
+
           With Love &amp; Blessings
+
           <br>
           <br>
+
           Rahul &amp; Priya ❤️
+
         </div>
 
       </div>
 
 
+      <!-- FRONT OF ENVELOPE -->
+
       <div class="envelope-front"></div>
 
+
+      <!-- TOP FLAP -->
+
       <div class="flap"></div>
+
+
+      <!-- SEAL -->
 
       <div class="seal">
         ♥
       </div>
+
 
     </div>
 
@@ -899,6 +908,7 @@ body {
     max-width: 400px;
   ">
 
+
     <div style="
       font-family: Arial, sans-serif;
       font-size: 11px;
@@ -907,7 +917,9 @@ body {
       margin-bottom: 18px;
       opacity: 0.9;
     ">
+
       A Beautiful Beginning
+
     </div>
 
 
@@ -917,7 +929,9 @@ body {
       font-weight: 400;
       text-shadow: 0 3px 15px rgba(0,0,0,0.7);
     ">
+
       Rahul &amp; Priya ❤️
+
     </div>
 
 
@@ -928,7 +942,9 @@ body {
       margin-top: 14px;
       opacity: 0.9;
     ">
+
       Our Story • Our Memories • Forever
+
     </div>
 
 
@@ -943,8 +959,11 @@ body {
       display: inline-block;
       background: rgba(0,0,0,0.25);
     ">
+
       TAP TO ENTER
+
     </div>
+
 
   </div>
 
@@ -952,7 +971,7 @@ body {
 
 
 <!-- =========================
-     MUSIC
+     BACKGROUND MUSIC
 ========================= -->
 
 <audio id="bgMusic">
@@ -964,6 +983,10 @@ body {
 
 </audio>
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
@@ -981,9 +1004,9 @@ startScreen.addEventListener("click", function () {
 
   startScreen.style.display = "none";
 
-  music.play();
+  music.play().catch(function () {});
 
-  video.play();
+  video.play().catch(function () {});
 
 });
 
@@ -996,8 +1019,10 @@ music.addEventListener("ended", function () {
 
 });
 
+
 </script>
 
 
 </body>
+
 </html>
