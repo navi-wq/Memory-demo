@@ -407,9 +407,200 @@ body {
 
   animation: sealFade 4s ease-in-out infinite;
 }
+/* =========================
+   SHAGUN
+========================= */
+
+.shagun-section {
+  min-height: 90vh;
+  padding: 90px 20px;
+  background:
+    radial-gradient(
+      circle at center,
+      #fff8ed 0%,
+      #ead8c4 100%
+    );
+  color: #4a3022;
+  text-align: center;
+  overflow: hidden;
+}
+
+.shagun-kicker {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.shagun-title {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.shagun-subtitle {
+  margin-top: 12px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  opacity: 0.75;
+}
 
 
-@keyframes flapOpen {
+/* ENVELOPE */
+
+.envelope-area {
+  position: relative;
+  width: 300px;
+  height: 260px;
+  margin: 70px auto 40px;
+  perspective: 1000px;
+}
+
+.envelope {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  height: 190px;
+  background: #f1dfc7;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(80,50,30,0.25);
+}
+
+
+/* CARD */
+
+.letter {
+  position: absolute;
+  left: 25px;
+  bottom: 20px;
+  width: 250px;
+  height: 145px;
+
+  background: #fffaf1;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  z-index: 2;
+
+  box-shadow: 0 5px 15px rgba(60,40,20,0.15);
+
+  animation: letterMove 4s ease-in-out infinite;
+}
+
+.letter-text {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #6b4734;
+}
+
+
+/* ENVELOPE FLAP */
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 100px solid #dfc4a5;
+
+  transform-origin: top center;
+
+  z-index: 4;
+
+  animation: flapMove 4s ease-in-out infinite;
+}
+
+
+/* ENVELOPE FRONT */
+
+.envelope::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 300px;
+  height: 105px;
+
+  background: #f1dfc7;
+
+  clip-path: polygon(
+    0 0,
+    50% 55%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  z-index: 3;
+}
+
+
+/* SEAL */
+
+.seal {
+  position: absolute;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #a85d55;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  left: 129px;
+  top: 75px;
+
+  font-size: 17px;
+
+  z-index: 5;
+
+  animation: sealMove 4s ease-in-out infinite;
+}
+
+
+/* CARD MOVEMENT */
+
+@keyframes letterMove {
+
+  0%, 20% {
+    transform: translateY(0);
+  }
+
+  45%, 75% {
+    transform: translateY(-105px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+/* FLAP MOVEMENT */
+
+@keyframes flapMove {
 
   0%, 20% {
     transform: rotateX(0deg);
@@ -426,24 +617,9 @@ body {
 }
 
 
-@keyframes letterUp {
+/* SEAL */
 
-  0%, 20% {
-    transform: translateY(20px);
-  }
-
-  45%, 75% {
-    transform: translateY(-75px);
-  }
-
-  100% {
-    transform: translateY(20px);
-  }
-
-}
-
-
-@keyframes sealFade {
+@keyframes sealMove {
 
   0%, 25% {
     opacity: 1;
@@ -484,6 +660,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 12px;
   letter-spacing: 2px;
+}
 }
 
 
