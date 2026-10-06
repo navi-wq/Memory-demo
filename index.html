@@ -260,19 +260,24 @@ body {
 
 /* =========================
    SHAGUN
+   NEW DESIGN
 ========================= */
 
 .shagun-section {
   min-height: 90vh;
-  padding: 90px 20px;
+  padding: 90px 20px 100px;
+
   background:
     radial-gradient(
       circle at center,
-      #fff8ed 0%,
+      #fffaf2 0%,
       #ead8c4 100%
     );
+
   color: #4a3022;
+
   text-align: center;
+
   overflow: hidden;
 }
 
@@ -301,728 +306,134 @@ body {
 
 
 /* =========================
-   ENVELOPE AREA
+   SHAGUN CARD AREA
 ========================= */
 
-.envelope-area {
+.shagun-card-area {
+  width: 300px;
+  height: 270px;
+
+  margin: 60px auto 45px;
+
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 65px auto 45px;
-  perspective: 1000px;
-}
-
-
-/* =========================
-   ENVELOPE BODY
-========================= */
-
-.envelope {
-  position: absolute;
-  left: 0;
-  bottom: 25px;
-
-  width: 300px;
-  height: 190px;
-
-  background: #f1dfc7;
-
-  border-radius: 8px;
-
-  box-shadow:
-    0 15px 35px rgba(80,50,30,0.25);
-
-  overflow: visible;
-}
-
-
-/* =========================
-   LETTER / CARD
-========================= */
-
-.letter {
-  position: absolute;
-
-  left: 25px;
-  bottom: -35px;
-
-  width: 250px;
-  height: 125px;
-
-  background: #fffaf1;
-
-  border-radius: 5px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-
-  text-align: center;
-
-  box-shadow:
-    0 5px 15px rgba(60,40,20,0.15);
-
-  z-index: 2;
-
-  animation:
-    letterMove
-    4s
-    ease-in-out
-    infinite;
-}
-
-.letter-text {
-  font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #6b4734;
 }
 
 
 /* =========================
-   ENVELOPE FRONT
+   SOFT GLOW
 ========================= */
 
-.envelope-front {
+.shagun-glow {
   position: absolute;
 
-  left: 0;
-  bottom: 0;
-
-  width: 300px;
-  height: 110px;
-
-  background: #f1dfc7;
-
-  clip-path: polygon(
-    0 0,
-    50% 55%,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-
-  z-index: 4;
-}
-
-
-/* =========================
-   TOP FLAP
-========================= */
-
-.flap {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 0;
-  height: 0;
-
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 105px solid #dfc4a5;
-
-  transform-origin: top center;
-
-  z-index: 5;
-
-  animation:
-    flapMove
-    4s
-    ease-in-out
-    infinite;
-
-  backface-visibility: hidden;
-}
-
-
-/* =========================
-   SEAL
-========================= */
-
-.seal {
-  position: absolute;
-
-  width: 42px;
-  height: 42px;
+  width: 220px;
+  height: 220px;
 
   border-radius: 50%;
 
-  background: #a85d55;
-  color: white;
+  background: rgba(255,255,255,0.55);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  left: 129px;
-  top: 75px;
-
-  font-size: 17px;
-
-  z-index: 6;
+  filter: blur(25px);
 
   animation:
-    sealMove
-    4s
+    shagunGlow
+    3s
     ease-in-out
     infinite;
 }
 
 
 /* =========================
-   CARD ANIMATION
+   BLESSING CARD
 ========================= */
 
-@keyframes letterMove {
+.shagun-card {
+  position: relative;
 
-  /* CARD COMPLETELY INSIDE */
-  0%, 20% {
-    transform: translateY(35px);
-  }
+  z-index: 2;
 
-  /* CARD COMES OUT */
-  45%, 75% {
-    transform: translateY(-105px);
-  }
+  width: 270px;
 
-  /* CARD GOES BACK INSIDE */
-  100% {
-    transform: translateY(35px);
-  }
+  min-height: 175px;
 
+  padding: 30px 20px;
+
+  background: #fffaf1;
+
+  border: 1px solid rgba(130,90,55,0.18);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 18px 40px rgba(80,50,30,0.20);
+
+  animation:
+    shagunReveal
+    3s
+    ease-in-out
+    infinite;
 }
 
 
-/* =========================
-   FLAP ANIMATION
-========================= */
+/* CARD DECORATION */
 
-@keyframes flapMove {
+.shagun-card::before {
+  content: "✦";
 
-  /* CLOSED */
-  0%, 20% {
-    transform: rotateX(0deg);
-  }
+  display: block;
 
-  /* OPEN */
-  45%, 75% {
-    transform: rotateX(180deg);
-  }
+  font-size: 18px;
 
-  /* CLOSED */
-  100% {
-    transform: rotateX(0deg);
-  }
+  margin-bottom: 12px;
 
-}
-
-
-/* =========================
-   SEAL ANIMATION
-========================= */
-
-@keyframes sealMove {
-
-  0%, 25% {
-    opacity: 1;
-  }
-
-  45%, 75% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-
-}
-
-
-/* =========================
-   FINAL MESSAGE
-========================= */
-
-.final-message {
-  margin-top: 25px;
-}
-
-.final-message .bless {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   opacity: 0.65;
 }
 
-.final-message h3 {
-  margin-top: 10px;
+
+/* CARD TEXT */
+
+.shagun-card-title {
   font-family: Georgia, serif;
-  font-size: 28px;
-  font-weight: 400;
+
+  font-size: 21px;
+
+  color: #6b4734;
 }
 
-.final-message p {
-  margin-top: 8px;
+.shagun-card-names {
+  margin-top: 14px;
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  color: #8a5a43;
+}
+
+.shagun-card-message {
+  margin-top: 12px;
+
   font-family: Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 2px;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+
+  letter-spacing: 1px;
+
+  opacity: 0.65;
 }
 
 
 /* =========================
-   TAP TO ENTER
+   SMALL ENVELOPE
 ========================= */
 
-#startScreen {
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 99999;
-
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,0.25),
-      rgba(0,0,0,0.45)
-    ),
-    url('./couple.jpg');
-
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-
-/* =========================
-   MUSIC
-========================= */
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     OPENING VIDEO
-========================= -->
-
-<section class="hero">
-
-  <video
-    autoplay
-    muted
-    playsinline
-    loop
-    preload="auto"
-  >
-
-    <source
-      src="./couple-video.mp4"
-      type="video/mp4"
-    >
-
-  </video>
-
-
-  <div class="names">
-
-    <div class="small">
-      A Beautiful Beginning
-    </div>
-
-    <h1>
-      Rahul &amp; Priya
-    </h1>
-
-    <p>
-      Our Story • Our Memories • Forever
-    </p>
-
-  </div>
-
-
-  <div class="scroll">
-    ↓ SCROLL TO DISCOVER
-  </div>
-
-</section>
-
-
-<!-- =========================
-     HALDI
-========================= -->
-
-<section class="haldi-section">
-
-  <div class="haldi-heading">
-
-    <div class="haldi-kicker">
-      A Little Sunshine
-    </div>
-
-    <h2>
-      HALDI
-    </h2>
-
-    <p>
-      Where the celebrations began
-    </p>
-
-  </div>
-
-
-  <div class="haldi-grid">
-
-    <img src="./haldi1.jpg" alt="Haldi memory 1">
-
-    <img src="./haldi2.jpg" alt="Haldi memory 2">
-
-    <img src="./haldi3.jpg" alt="Haldi memory 3">
-
-    <img src="./haldi4.jpg" alt="Haldi memory 4">
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     MEHNDI
-========================= -->
-
-<section class="story-section mehendi-section">
-
-  <div class="story-heading">
-
-    <div class="story-kicker">
-      Painted With Love
-    </div>
-
-    <h2>
-      MEHNDI
-    </h2>
-
-    <p>
-      Where every shade of green painted a little more love,
-      and every moment became a memory to cherish forever.
-    </p>
-
-  </div>
-
-
-  <div class="story-grid">
-
-    <img src="./mehndi01.jpg" alt="Mehndi memory 1">
-
-    <img src="./mehndi02.jpg" alt="Mehndi memory 2">
-
-    <img src="./mehndi03.jpg" alt="Mehndi memory 3">
-
-    <img src="./mehndi04.jpg" alt="Mehndi memory 4">
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     WEDDING
-========================= -->
-
-<section class="story-section wedding-section">
-
-  <div class="story-heading">
-
-    <div class="story-kicker">
-      The Beginning Of Forever
-    </div>
-
-    <h2>
-      WEDDING
-    </h2>
-
-    <p>
-      Two hearts, one promise, and a lifetime to go.
-      The day our forever beautifully began.
-    </p>
-
-  </div>
-
-
-  <div class="story-grid">
-
-    <img src="./wedding1.jpg" alt="Wedding memory 1">
-
-    <img src="./wedding2.jpg" alt="Wedding memory 2">
-
-    <img src="./wedding3.jpg" alt="Wedding memory 3">
-
-    <img src="./wedding4.jpg" alt="Wedding memory 4">
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     RECEPTION
-========================= -->
-
-<section class="story-section reception-section">
-
-  <div class="story-heading">
-
-    <div class="story-kicker">
-      A Celebration Of Love
-    </div>
-
-    <h2>
-      RECEPTION
-    </h2>
-
-    <p>
-      A beautiful evening filled with love, laughter and blessings,
-      celebrating the beginning of our forever together.
-    </p>
-
-  </div>
-
-
-  <div class="story-grid">
-
-    <img src="./reception1.jpg" alt="Reception memory 1">
-
-    <img src="./reception2.jpg" alt="Reception memory 2">
-
-    <img src="./reception3.jpg" alt="Reception memory 3">
-
-    <img src="./reception4.jpg" alt="Reception memory 4">
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     SHAGUN
-========================= -->
-
-<section class="shagun-section">
-
-  <div class="shagun-kicker">
-    A Little Blessing
-  </div>
-
-  <div class="shagun-title">
-    SHAGUN
-  </div>
-
-  <div class="shagun-subtitle">
-    A little envelope filled with love &amp; blessings
-  </div>
-
-
-  <div class="envelope-area">
-
-    <div class="envelope">
-
-
-      <!-- LETTER -->
-
-      <div class="letter">
-
-        <div class="letter-text">
-
-          With Love &amp; Blessings
-
-          <br>
-          <br>
-
-          Rahul &amp; Priya ❤️
-
-        </div>
-
-      </div>
-
-
-      <!-- FRONT OF ENVELOPE -->
-
-      <div class="envelope-front"></div>
-
-
-      <!-- TOP FLAP -->
-
-      <div class="flap"></div>
-
-
-      <!-- SEAL -->
-
-      <div class="seal">
-        ♥
-      </div>
-
-
-    </div>
-
-  </div>
-
-
-  <div class="final-message">
-
-    <div class="bless">
-      Our Story • Our Memories • Forever
-    </div>
-
-    <h3>
-      Thank You For Being A Part Of Our Journey
-    </h3>
-
-    <p>
-      With Love, Rahul &amp; Priya ❤️
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     TAP TO ENTER
-========================= -->
-
-<div id="startScreen">
-
-  <div style="
-    padding: 35px 25px;
-    width: 90%;
-    max-width: 400px;
-  ">
-
-
-    <div style="
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      opacity: 0.9;
-    ">
-
-      A Beautiful Beginning
-
-    </div>
-
-
-    <div style="
-      font-family: Georgia, serif;
-      font-size: 42px;
-      font-weight: 400;
-      text-shadow: 0 3px 15px rgba(0,0,0,0.7);
-    ">
-
-      Rahul &amp; Priya ❤️
-
-    </div>
-
-
-    <div style="
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-top: 14px;
-      opacity: 0.9;
-    ">
-
-      Our Story • Our Memories • Forever
-
-    </div>
-
-
-    <div style="
-      margin-top: 45px;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 4px;
-      padding: 14px 28px;
-      border: 1px solid rgba(255,255,255,0.7);
-      border-radius: 30px;
-      display: inline-block;
-      background: rgba(0,0,0,0.25);
-    ">
-
-      TAP TO ENTER
-
-    </div>
-
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     BACKGROUND MUSIC
-========================= -->
-
-<audio id="bgMusic">
-
-  <source
-    src="Dil Diyan Gallan Song.mp3"
-    type="audio/mpeg"
-  >
-
-</audio>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-const startScreen =
-  document.getElementById("startScreen");
-
-const music =
-  document.getElementById("bgMusic");
-
-const video =
-  document.querySelector(".hero video");
-
-
-startScreen.addEventListener("click", function () {
-
-  startScreen.style.display = "none";
-
-  music.play().catch(function () {});
-
-  video.play().catch(function () {});
-
-});
-
-
-music.addEventListener("ended", function () {
-
-  video.pause();
-
-  video.currentTime = 0;
-
-});
-
-
-</script>
-
-
-</body>
-
-</html>
+.shagun-envelope {
+  position:
