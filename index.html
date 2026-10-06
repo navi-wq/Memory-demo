@@ -43,8 +43,6 @@ body {
   z-index: 2;
 }
 
-/* Dark overlay */
-
 .hero::after {
   content: "";
   position: absolute;
@@ -57,8 +55,6 @@ body {
   );
   z-index: 1;
 }
-
-/* Names */
 
 .names {
   position: absolute;
@@ -93,8 +89,6 @@ body {
   opacity: 0.9;
 }
 
-/* Scroll indication */
-
 .scroll {
   position: absolute;
   z-index: 3;
@@ -109,7 +103,7 @@ body {
 
 
 /* =========================
-   HALDI SECTION
+   HALDI
 ========================= */
 
 .haldi-section {
@@ -164,6 +158,360 @@ body {
   border-radius: 12px;
 }
 
+
+/* =========================
+   STORY SECTIONS
+========================= */
+
+.story-section {
+  padding: 75px 18px 85px;
+  text-align: center;
+}
+
+.story-heading {
+  max-width: 500px;
+  margin: auto;
+}
+
+.story-kicker {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.65;
+}
+
+.story-heading h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.story-heading p {
+  margin: 18px auto 0;
+  max-width: 430px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.story-grid {
+  margin: 38px auto 0;
+  max-width: 520px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.story-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+
+/* =========================
+   MEHENDI
+========================= */
+
+.mehendi-section {
+  background: #f5eee4;
+  color: #49372b;
+}
+
+
+/* =========================
+   WEDDING
+========================= */
+
+.wedding-section {
+  background: linear-gradient(
+    180deg,
+    #fff8f5,
+    #f9eee8
+  );
+  color: #4b3028;
+}
+
+
+/* =========================
+   RECEPTION
+========================= */
+
+.reception-section {
+  background: #eee9df;
+  color: #40362d;
+}
+
+
+/* =========================
+   SHAGUN
+========================= */
+
+.shagun-section {
+  min-height: 90vh;
+  padding: 90px 20px;
+  background:
+    radial-gradient(
+      circle at center,
+      #fff8ed 0%,
+      #ead8c4 100%
+    );
+  color: #4a3022;
+  text-align: center;
+  overflow: hidden;
+}
+
+.shagun-kicker {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.shagun-title {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.shagun-subtitle {
+  margin-top: 12px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+
+/* Envelope */
+
+.envelope-area {
+  position: relative;
+  width: 300px;
+  height: 230px;
+  margin: 70px auto 40px;
+  perspective: 1000px;
+}
+
+.envelope {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  height: 190px;
+  background: #f1dfc7;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(80,50,30,0.25);
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      35deg,
+      transparent 49%,
+      rgba(120,80,50,0.18) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -35deg,
+      transparent 49%,
+      rgba(120,80,50,0.18) 50%,
+      transparent 51%
+    );
+  border-radius: 8px;
+}
+
+
+/* Letter */
+
+.letter {
+  position: absolute;
+  left: 25px;
+  width: 250px;
+  height: 150px;
+  bottom: 25px;
+  background: #fffaf1;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(60,40,20,0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  z-index: 2;
+
+  animation: letterUp 4s ease-in-out infinite;
+}
+
+.letter-text {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #6b4734;
+}
+
+
+/* Envelope flap */
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 100px solid #dfc4a5;
+
+  transform-origin: top center;
+  z-index: 4;
+
+  animation: flapOpen 4s ease-in-out infinite;
+}
+
+
+/* Seal */
+
+.seal {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #a85d55;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  left: 129px;
+  top: 75px;
+
+  font-size: 17px;
+
+  z-index: 5;
+
+  animation: sealFade 4s ease-in-out infinite;
+}
+
+
+@keyframes flapOpen {
+
+  0%, 20% {
+    transform: rotateX(0deg);
+  }
+
+  45%, 75% {
+    transform: rotateX(180deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+
+}
+
+
+@keyframes letterUp {
+
+  0%, 20% {
+    transform: translateY(20px);
+  }
+
+  45%, 75% {
+    transform: translateY(-75px);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+
+}
+
+
+@keyframes sealFade {
+
+  0%, 25% {
+    opacity: 1;
+  }
+
+  45%, 75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
+.final-message {
+  margin-top: 25px;
+}
+
+.final-message .bless {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.final-message h3 {
+  margin-top: 10px;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.final-message p {
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   TAP TO ENTER
+========================= */
+
+#startScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.45)
+    ),
+    url('./couple.jpg');
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
 </style>
 
 </head>
@@ -185,8 +533,14 @@ body {
     loop
     preload="auto"
   >
-    <source src="./couple-video.mp4" type="video/mp4">
+
+    <source
+      src="./couple-video.mp4"
+      type="video/mp4"
+    >
+
   </video>
+
 
   <div class="names">
 
@@ -204,11 +558,13 @@ body {
 
   </div>
 
+
   <div class="scroll">
     ↓ SCROLL TO DISCOVER
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -249,27 +605,198 @@ body {
 </section>
 
 
+
 <!-- =========================
-     TAP TO ENTER SCREEN
+     MEHENDI
 ========================= -->
 
-<div id="startScreen" style="
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,0.25),
-      rgba(0,0,0,0.45)
-    ),
-    url('./couple.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-">
+<section class="story-section mehendi-section">
+
+  <div class="story-heading">
+
+    <div class="story-kicker">
+      Painted With Love
+    </div>
+
+    <h2>
+      MEHENDI
+    </h2>
+
+    <p>
+      Where every shade of green painted a little more love,
+      and every moment became a memory to cherish forever.
+    </p>
+
+  </div>
+
+
+  <div class="story-grid">
+
+    <img src="./mehendi1.jpg" alt="Mehendi memory 1">
+
+    <img src="./mehendi2.jpg" alt="Mehendi memory 2">
+
+    <img src="./mehendi3.jpg" alt="Mehendi memory 3">
+
+    <img src="./mehendi4.jpg" alt="Mehendi memory 4">
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     WEDDING
+========================= -->
+
+<section class="story-section wedding-section">
+
+  <div class="story-heading">
+
+    <div class="story-kicker">
+      The Beginning Of Forever
+    </div>
+
+    <h2>
+      WEDDING
+    </h2>
+
+    <p>
+      Two hearts, one promise, and a lifetime to go.
+      The day our forever beautifully began.
+    </p>
+
+  </div>
+
+
+  <div class="story-grid">
+
+    <img src="./wedding1.jpg" alt="Wedding memory 1">
+
+    <img src="./wedding2.jpg" alt="Wedding memory 2">
+
+    <img src="./wedding3.jpg" alt="Wedding memory 3">
+
+    <img src="./wedding4.jpg" alt="Wedding memory 4">
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     RECEPTION
+========================= -->
+
+<section class="story-section reception-section">
+
+  <div class="story-heading">
+
+    <div class="story-kicker">
+      A Celebration Of Love
+    </div>
+
+    <h2>
+      RECEPTION
+    </h2>
+
+    <p>
+      A beautiful evening filled with love, laughter and blessings,
+      celebrating the beginning of our forever together.
+    </p>
+
+  </div>
+
+
+  <div class="story-grid">
+
+    <img src="./reception1.jpg" alt="Reception memory 1">
+
+    <img src="./reception2.jpg" alt="Reception memory 2">
+
+    <img src="./reception3.jpg" alt="Reception memory 3">
+
+    <img src="./reception4.jpg" alt="Reception memory 4">
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SHAGUN
+========================= -->
+
+<section class="shagun-section">
+
+  <div class="shagun-kicker">
+    A Little Blessing
+  </div>
+
+  <div class="shagun-title">
+    SHAGUN
+  </div>
+
+  <div class="shagun-subtitle">
+    A little envelope filled with love &amp; blessings
+  </div>
+
+
+  <div class="envelope-area">
+
+    <div class="envelope">
+
+      <div class="letter">
+
+        <div class="letter-text">
+          With Love &amp; Blessings
+          <br>
+          <br>
+          Rahul &amp; Priya ❤️
+        </div>
+
+      </div>
+
+
+      <div class="flap"></div>
+
+      <div class="seal">
+        ♥
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="final-message">
+
+    <div class="bless">
+      Our Story • Our Memories • Forever
+    </div>
+
+    <h3>
+      Thank You For Being A Part Of Our Journey
+    </h3>
+
+    <p>
+      With Love, Rahul &amp; Priya ❤️
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     TAP TO ENTER
+========================= -->
+
+<div id="startScreen">
 
   <div style="
     padding: 35px 25px;
@@ -329,13 +856,20 @@ body {
 </div>
 
 
+
 <!-- =========================
      MUSIC
 ========================= -->
 
 <audio id="bgMusic">
-  <source src="Dil Diyan Gallan Song.mp3" type="audio/mpeg">
+
+  <source
+    src="Dil Diyan Gallan Song.mp3"
+    type="audio/mpeg"
+  >
+
 </audio>
+
 
 
 <script>
@@ -355,6 +889,7 @@ startScreen.addEventListener("click", function () {
   startScreen.style.display = "none";
 
   music.play();
+
   video.play();
 
 });
@@ -363,6 +898,7 @@ startScreen.addEventListener("click", function () {
 music.addEventListener("ended", function () {
 
   video.pause();
+
   video.currentTime = 0;
 
 });
@@ -372,3 +908,7 @@ music.addEventListener("ended", function () {
 
 </body>
 </html>
+
+अब इसे पूरा का पूरा paste करें और Commit Changes कर दें।
+
+इस बार Haldi भी इसी code में है, इसलिए आपकी "haldi1.jpg" से "haldi4.jpg" वाली photos भी वापस दिखेंगी।
