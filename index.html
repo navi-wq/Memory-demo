@@ -21,6 +21,7 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 
+
 /* =========================
    OPENING VIDEO
 ========================= */
@@ -219,7 +220,7 @@ body {
    MEHNDI
 ========================= */
 
-.mehndi-section {
+.mehendi-section {
   background: #f5eee4;
   color: #49372b;
 }
@@ -291,178 +292,22 @@ body {
 }
 
 
-/* Envelope */
-
-.envelope-area {
-  position: relative;
-  width: 300px;
-  height: 230px;
-  margin: 70px auto 40px;
-  perspective: 1000px;
-}
-
-.envelope {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 300px;
-  height: 190px;
-  background: #f1dfc7;
-  border-radius: 8px;
-  box-shadow: 0 15px 35px rgba(80,50,30,0.25);
-  overflow: hidden;
-}
-
-.envelope::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      35deg,
-      transparent 49%,
-      rgba(120,80,50,0.18) 50%,
-      transparent 51%
-    ),
-    linear-gradient(
-      -35deg,
-      transparent 49%,
-      rgba(120,80,50,0.18) 50%,
-      transparent 51%
-    );
-  border-radius: 8px;
-}
-
-
-/* Letter */
-
-.letter {
-  position: absolute;
-  left: 25px;
-  width: 250px;
-  height: 150px;
-  bottom: 25px;
-  background: #fffaf1;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(60,40,20,0.15);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  z-index: 1;
-
-  animation: letterUp 4s ease-in-out infinite;
-}
-
-.letter-text {
-  font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #6b4734;
-}
-
-
-/* Envelope flap */
-
-.flap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 100px solid #dfc4a5;
-
-  transform-origin: top center;
-  z-index: 4;
-
-  animation: flapOpen 4s ease-in-out infinite;
-}
-
-
-/* Seal */
-
-.seal {
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #a85d55;
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  left: 129px;
-  top: 75px;
-
-  font-size: 17px;
-
-  z-index: 5;
-
-  animation: sealFade 4s ease-in-out infinite;
-}
 /* =========================
-   SHAGUN
+   ENVELOPE
 ========================= */
 
-.shagun-section {
-  min-height: 90vh;
-  padding: 90px 20px;
-  background:
-    radial-gradient(
-      circle at center,
-      #fff8ed 0%,
-      #ead8c4 100%
-    );
-  color: #4a3022;
-  text-align: center;
-  overflow: hidden;
-}
-
-.shagun-kicker {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  opacity: 0.7;
-  margin-bottom: 12px;
-}
-
-.shagun-title {
-  font-family: Georgia, serif;
-  font-size: 34px;
-  font-weight: 400;
-  letter-spacing: 3px;
-}
-
-.shagun-subtitle {
-  margin-top: 12px;
-  font-family: Georgia, serif;
-  font-size: 14px;
-  opacity: 0.75;
-}
-
-
-/* ENVELOPE */
-
 .envelope-area {
   position: relative;
   width: 300px;
-  height: 260px;
-  margin: 70px auto 40px;
+  height: 300px;
+  margin: 65px auto 45px;
   perspective: 1000px;
 }
 
 .envelope {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 25px;
   width: 300px;
   height: 190px;
   background: #f1dfc7;
@@ -471,12 +316,13 @@ body {
 }
 
 
-/* CARD */
+/* CARD INSIDE ENVELOPE */
 
 .letter {
   position: absolute;
   left: 25px;
   bottom: 20px;
+
   width: 250px;
   height: 145px;
 
@@ -488,9 +334,11 @@ body {
   justify-content: center;
   text-align: center;
 
+  box-shadow: 0 5px 15px rgba(60,40,20,0.15);
+
   z-index: 2;
 
-  box-shadow: 0 5px 15px rgba(60,40,20,0.15);
+  transform: translateY(95px);
 
   animation: letterMove 4s ease-in-out infinite;
 }
@@ -503,39 +351,15 @@ body {
 }
 
 
-/* ENVELOPE FLAP */
-
-.flap {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 0;
-  height: 0;
-
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 100px solid #dfc4a5;
-
-  transform-origin: top center;
-
-  z-index: 4;
-
-  animation: flapMove 4s ease-in-out infinite;
-}
-
-
 /* ENVELOPE FRONT */
 
-.envelope::after {
-  content: "";
+.envelope-front {
   position: absolute;
-
   left: 0;
   bottom: 0;
 
   width: 300px;
-  height: 105px;
+  height: 110px;
 
   background: #f1dfc7;
 
@@ -548,6 +372,29 @@ body {
   );
 
   z-index: 3;
+}
+
+
+/* ENVELOPE FLAP */
+
+.flap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 105px solid #dfc4a5;
+
+  transform-origin: top center;
+
+  z-index: 5;
+
+  animation: flapMove 4s ease-in-out infinite;
 }
 
 
@@ -573,32 +420,32 @@ body {
 
   font-size: 17px;
 
-  z-index: 5;
+  z-index: 6;
 
   animation: sealMove 4s ease-in-out infinite;
 }
 
 
-/* CARD MOVEMENT */
+/* =========================
+   ENVELOPE ANIMATION
+========================= */
 
 @keyframes letterMove {
 
   0%, 20% {
-    transform: translateY(0);
+    transform: translateY(95px);
   }
 
   45%, 75% {
-    transform: translateY(-105px);
+    transform: translateY(-100px);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateY(95px);
   }
 
 }
 
-
-/* FLAP MOVEMENT */
 
 @keyframes flapMove {
 
@@ -617,8 +464,6 @@ body {
 }
 
 
-/* SEAL */
-
 @keyframes sealMove {
 
   0%, 25% {
@@ -635,6 +480,10 @@ body {
 
 }
 
+
+/* =========================
+   FINAL MESSAGE
+========================= */
 
 .final-message {
   margin-top: 25px;
@@ -661,7 +510,6 @@ body {
   font-size: 12px;
   letter-spacing: 2px;
 }
-}
 
 
 /* =========================
@@ -671,6 +519,7 @@ body {
 #startScreen {
   position: fixed;
   inset: 0;
+
   z-index: 9999;
 
   background-image:
@@ -744,7 +593,6 @@ body {
 </section>
 
 
-
 <!-- =========================
      HALDI
 ========================= -->
@@ -783,12 +631,11 @@ body {
 </section>
 
 
-
 <!-- =========================
      MEHNDI
 ========================= -->
 
-<section class="story-section mehndi-section">
+<section class="story-section mehendi-section">
 
   <div class="story-heading">
 
@@ -812,16 +659,15 @@ body {
 
     <img src="./mehndi01.jpg" alt="Mehndi memory 1">
 
-<img src="./mehndi02.jpg" alt="Mehndi memory 2">
+    <img src="./mehndi02.jpg" alt="Mehndi memory 2">
 
-<img src="./mehndi03.jpg" alt="Mehndi memory 3">
+    <img src="./mehndi03.jpg" alt="Mehndi memory 3">
 
-<img src="./mehndi04.jpg" alt="Mehndi memory 4">
+    <img src="./mehndi04.jpg" alt="Mehndi memory 4">
 
   </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -863,7 +709,6 @@ body {
 </section>
 
 
-
 <!-- =========================
      RECEPTION
 ========================= -->
@@ -903,7 +748,6 @@ body {
 </section>
 
 
-
 <!-- =========================
      SHAGUN
 ========================= -->
@@ -939,6 +783,8 @@ body {
       </div>
 
 
+      <div class="envelope-front"></div>
+
       <div class="flap"></div>
 
       <div class="seal">
@@ -969,11 +815,6 @@ body {
 </section>
 
 
-
-<!-- =========================
-     TAP TO ENTER
-========================= -->
-
 <!-- =========================
      TAP TO ENTER
 ========================= -->
@@ -997,6 +838,7 @@ body {
       A Beautiful Beginning
     </div>
 
+
     <div style="
       font-family: Georgia, serif;
       font-size: 42px;
@@ -1005,6 +847,7 @@ body {
     ">
       Rahul &amp; Priya ❤️
     </div>
+
 
     <div style="
       font-family: Arial, sans-serif;
@@ -1015,6 +858,7 @@ body {
     ">
       Our Story • Our Memories • Forever
     </div>
+
 
     <div style="
       margin-top: 45px;
@@ -1034,6 +878,7 @@ body {
 
 </div>
 
+
 <!-- =========================
      MUSIC
 ========================= -->
@@ -1046,7 +891,6 @@ body {
   >
 
 </audio>
-
 
 
 <script>
@@ -1085,5 +929,3 @@ music.addEventListener("ended", function () {
 
 </body>
 </html>
-
-
