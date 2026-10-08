@@ -45,11 +45,11 @@ body {
 
 .hero video {
   position: absolute;
-  width: 90%;
+  width: 100%;
   height: 100%;
   object-fit: contain;
   top: 0;
-  left: 3%;
+  left: 0;
   z-index: 2;
 }
 
@@ -260,20 +260,19 @@ body {
 
 /* =========================
    SHAGUN
+   SIMPLE PREMIUM DESIGN
 ========================= */
 
 .shagun-section {
-  min-height: 90vh;
-  padding: 90px 20px;
-  background:
-    radial-gradient(
-      circle at center,
-      #fff8ed 0%,
-      #ead8c4 100%
-    );
+  min-height: 85vh;
+  padding: 85px 20px 100px;
+  background: linear-gradient(
+    180deg,
+    #fffaf4 0%,
+    #ead9c5 100%
+  );
   color: #4a3022;
   text-align: center;
-  overflow: hidden;
 }
 
 .shagun-kicker {
@@ -281,259 +280,77 @@ body {
   font-size: 11px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  opacity: 0.7;
+  opacity: 0.65;
   margin-bottom: 12px;
 }
 
 .shagun-title {
   font-family: Georgia, serif;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
 }
 
 .shagun-subtitle {
   margin-top: 12px;
   font-family: Georgia, serif;
   font-size: 14px;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 
 /* =========================
-   ENVELOPE AREA
+   SHAGUN CARD
 ========================= */
 
-.envelope-area {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 65px auto 45px;
-  perspective: 1000px;
+.shagun-box {
+  max-width: 330px;
+  margin: 55px auto 45px;
+  padding: 38px 25px;
+  background: rgba(255,250,241,0.96);
+  border: 1px solid rgba(120,80,45,0.15);
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(70,45,25,0.18);
+  animation: shagunFade 3s ease-in-out infinite;
 }
 
-
-/* =========================
-   ENVELOPE BODY
-========================= */
-
-.envelope {
-  position: absolute;
-  left: 0;
-  bottom: 25px;
-
-  width: 300px;
-  height: 190px;
-
-  background: #f1dfc7;
-
-  border-radius: 8px;
-
-  box-shadow:
-    0 15px 35px rgba(80,50,30,0.25);
-
-  overflow: visible;
+.shagun-symbol {
+  font-size: 42px;
+  margin-bottom: 18px;
 }
 
-
-/* =========================
-   LETTER / CARD
-========================= */
-
-.letter {
-  position: absolute;
-
-  left: 25px;
-  bottom: -35px;
-
-  width: 250px;
-  height: 125px;
-
-  background: #fffaf1;
-
-  border-radius: 5px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  box-shadow:
-    0 5px 15px rgba(60,40,20,0.15);
-
-  z-index: 2;
-
-  animation:
-    letterMove
-    4s
-    ease-in-out
-    infinite;
-}
-
-.letter-text {
+.shagun-box h3 {
   font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 22px;
+  font-weight: 400;
   color: #6b4734;
 }
 
-
-/* =========================
-   ENVELOPE FRONT
-========================= */
-
-.envelope-front {
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 300px;
-  height: 110px;
-
-  background: #f1dfc7;
-
-  clip-path: polygon(
-    0 0,
-    50% 55%,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-
-  z-index: 4;
+.shagun-box .shagun-names {
+  margin-top: 15px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: #8a5a43;
 }
 
-
-/* =========================
-   TOP FLAP
-========================= */
-
-.flap {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 0;
-  height: 0;
-
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 105px solid #dfc4a5;
-
-  transform-origin: top center;
-
-  z-index: 5;
-
-  animation:
-    flapMove
-    4s
-    ease-in-out
-    infinite;
-
-  backface-visibility: hidden;
+.shagun-box p {
+  margin-top: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  opacity: 0.65;
 }
 
+@keyframes shagunFade {
 
-/* =========================
-   SEAL
-========================= */
-
-.seal {
-  position: absolute;
-
-  width: 42px;
-  height: 42px;
-
-  border-radius: 50%;
-
-  background: #a85d55;
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  left: 129px;
-  top: 75px;
-
-  font-size: 17px;
-
-  z-index: 6;
-
-  animation:
-    sealMove
-    4s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================
-   CARD ANIMATION
-========================= */
-
-@keyframes letterMove {
-
-  /* CARD COMPLETELY INSIDE */
-  0%, 20% {
-    transform: translateY(35px);
+  0%, 100% {
+    transform: translateY(8px);
+    opacity: 0.88;
   }
 
-  /* CARD COMES OUT */
-  45%, 75% {
-    transform: translateY(-105px);
-  }
-
-  /* CARD GOES BACK INSIDE */
-  100% {
-    transform: translateY(35px);
-  }
-
-}
-
-
-/* =========================
-   FLAP ANIMATION
-========================= */
-
-@keyframes flapMove {
-
-  /* CLOSED */
-  0%, 20% {
-    transform: rotateX(0deg);
-  }
-
-  /* OPEN */
-  45%, 75% {
-    transform: rotateX(180deg);
-  }
-
-  /* CLOSED */
-  100% {
-    transform: rotateX(0deg);
-  }
-
-}
-
-
-/* =========================
-   SEAL ANIMATION
-========================= */
-
-@keyframes sealMove {
-
-  0%, 25% {
-    opacity: 1;
-  }
-
-  45%, 75% {
-    opacity: 0;
-  }
-
-  100% {
+  50% {
+    transform: translateY(-5px);
     opacity: 1;
   }
 
@@ -577,32 +394,21 @@ body {
 
 #startScreen {
   position: fixed;
-
   inset: 0;
-
   z-index: 99999;
-
   background-image:
     linear-gradient(
       rgba(0,0,0,0.25),
       rgba(0,0,0,0.45)
     ),
     url('./couple.jpg');
-
   background-size: cover;
   background-position: center;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
-
-
-/* =========================
-   MUSIC
-========================= */
 
 </style>
 
@@ -832,47 +638,23 @@ body {
   </div>
 
 
-  <div class="envelope-area">
+  <div class="shagun-box">
 
-    <div class="envelope">
-
-
-      <!-- LETTER -->
-
-      <div class="letter">
-
-        <div class="letter-text">
-
-          With Love &amp; Blessings
-
-          <br>
-          <br>
-
-          Rahul &amp; Priya ❤️
-
-        </div>
-
-      </div>
-
-
-      <!-- FRONT OF ENVELOPE -->
-
-      <div class="envelope-front"></div>
-
-
-      <!-- TOP FLAP -->
-
-      <div class="flap"></div>
-
-
-      <!-- SEAL -->
-
-      <div class="seal">
-        ♥
-      </div>
-
-
+    <div class="shagun-symbol">
+      ✉️
     </div>
+
+    <h3>
+      With Love &amp; Blessings
+    </h3>
+
+    <div class="shagun-names">
+      Rahul &amp; Priya ❤️
+    </div>
+
+    <p>
+      A little blessing for your beautiful journey
+    </p>
 
   </div>
 
@@ -908,7 +690,6 @@ body {
     max-width: 400px;
   ">
 
-
     <div style="
       font-family: Arial, sans-serif;
       font-size: 11px;
@@ -917,9 +698,7 @@ body {
       margin-bottom: 18px;
       opacity: 0.9;
     ">
-
       A Beautiful Beginning
-
     </div>
 
 
@@ -929,9 +708,7 @@ body {
       font-weight: 400;
       text-shadow: 0 3px 15px rgba(0,0,0,0.7);
     ">
-
       Rahul &amp; Priya ❤️
-
     </div>
 
 
@@ -942,9 +719,7 @@ body {
       margin-top: 14px;
       opacity: 0.9;
     ">
-
       Our Story • Our Memories • Forever
-
     </div>
 
 
@@ -959,11 +734,8 @@ body {
       display: inline-block;
       background: rgba(0,0,0,0.25);
     ">
-
       TAP TO ENTER
-
     </div>
-
 
   </div>
 
@@ -971,7 +743,7 @@ body {
 
 
 <!-- =========================
-     BACKGROUND MUSIC
+     MUSIC
 ========================= -->
 
 <audio id="bgMusic">
@@ -983,10 +755,6 @@ body {
 
 </audio>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
@@ -1018,7 +786,6 @@ music.addEventListener("ended", function () {
   video.currentTime = 0;
 
 });
-
 
 </script>
 
